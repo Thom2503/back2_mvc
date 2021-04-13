@@ -7,11 +7,32 @@
   {
     private $subject;
     private $text;
-    
-    function __construct(argument)
+
+    function setSubject($subject)
     {
-      // code...
+      $subject = trim($subject);
+      
+      if (strlen($subject) <= 32)
+      {
+        $this->subject = ucfirst($subject);
+      }
     }
+
+    function getSubject()
+    {
+      return $this->subject;
+    }
+
+    function setMessage($text)
+    {
+      $this->text = $text;
+    }
+
+    function getMessage()
+    {
+      return $this->text;
+    }
+
   }
 
 
