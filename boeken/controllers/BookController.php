@@ -25,7 +25,6 @@
           $boek = new Book($row['id']);
           array_push($boeken, $boek);
         }
-        print_r($boeken);
         //return de lijst
         return $boeken;
       } else
