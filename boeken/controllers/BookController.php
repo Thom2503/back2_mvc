@@ -8,7 +8,6 @@
     {
       global $mysql;
 
-      //query
       $sql = "SELECT * FROM mvc_boeken ORDER BY id ASC";
 
       //resultaat
@@ -24,10 +23,9 @@
         while ($row = mysqli_fetch_array($result))
         {
           $boek = new Book($row['id']);
-          //var_dump($boek);
           array_push($boeken, $boek);
         }
-
+        print_r($boeken);
         //return de lijst
         return $boeken;
       } else
