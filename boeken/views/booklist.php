@@ -18,18 +18,18 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
                 <?php
                   foreach($boeken as $boek)
                   {
                     ?>
+                    <tr>
                       <td><?php echo $boek->title ?></td>
                       <td><?php echo $boek->author ?></td>
                       <td><?php echo $boek->isbn ?></td>
+                   </tr>
                     <?php
                   }
                  ?>
-              </tr>
             </tbody>
           </table>
         <?php

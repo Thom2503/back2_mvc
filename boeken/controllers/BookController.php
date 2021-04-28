@@ -1,6 +1,6 @@
 <?php
   /**
-   *
+   * @boeken = (array)
    */
   class BookController
   {
@@ -17,14 +17,15 @@
       if (mysqli_num_rows($result) > 0)
       {
         //maak een array voor de boeken
-        $boeken = Array();
+        $boeken = [];
 
         //voeg alle boeken toe aan de array
         while ($row = mysqli_fetch_array($result))
         {
-          $boek = new Book($row['id']);
-          array_push($boeken, $boek);
+          $boeken[] = new Book($row['id']);
         }
+        //toon de lijst
+        include "views/booklist.php";
         //return de lijst
         return $boeken;
       } else
