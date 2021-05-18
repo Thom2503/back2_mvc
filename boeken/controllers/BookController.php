@@ -33,6 +33,32 @@
         return false;
       }
     }
+
+    public function showBook($name)
+    {
+      global $mysql;
+
+      $sql = "SELECT * FROM mvc_boeken WHERE title LIKE '$name'";
+
+      //resultaat
+      $result = mysqli_query($mysql, $sql);
+
+      //zijn er rijen gevonden?
+      if (mysqli_num_rows($result) > 0)
+      {
+        while ($row = mysqli_fetch_array($result))
+        {
+          $boeken[] = new Book($row['id']);
+        }
+        //toon de lijst
+        include "views/booklist.php";
+        //return de lijst
+        return $boeken;
+      } else
+      {
+        return false;
+      }
+    }
   }
 
 
