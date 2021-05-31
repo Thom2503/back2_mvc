@@ -11,7 +11,7 @@
     function setSubject($subject)
     {
       $subject = trim($subject);
-      
+
       if (strlen($subject) <= 32)
       {
         $this->subject = ucfirst($subject);
